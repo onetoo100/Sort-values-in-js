@@ -1,18 +1,18 @@
-function selectionSort(array) {
-  let arr;
-  arr = [].concat(array);
+function sortSelection(array) {
+  let _arr;
+  _arr = [].concat(array);
 
   // It loops through the two arrays and sorts them
-  for (let i = 0; i < arr.length - 1; i++) {
-    let min_index = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[min_index]) {
-        min_index = j;
+  for (let i = 0; i < _arr.length - 1; i++) {
+    let min_i = i;
+    for (let j = i + 1; j < _arr.length; j++) {
+      if (_arr[j] < _arr[min_i]) {
+        min_i = j;
       }
     }
-    [arr[i], arr[min_index]] = [arr[min_index], arr[i]];
+    [_arr[i], _arr[min_i]] = [_arr[min_i], _arr[i]];
   }
-  return arr;
+  return _arr;
 }
 
 const inputValues = document.querySelector("#inputValues"),
@@ -32,5 +32,5 @@ inputValues.addEventListener("input", () => {
   }
 
   textAreaBefore.value = arrString.sort();
-  textAreaAfter.value = selectionSort(arrNumber); // or just use sort function, as I used above
+  textAreaAfter.value = sortSelection(arrNumber); // or just use sort function, as I used above
 });
